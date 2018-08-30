@@ -5,8 +5,7 @@ SRCDIR=src
 BUILDIR=build
 BINDIR=bin
 
-SOURCES:= src/Helper.cpp \
-		src/main.cpp
+SOURCES:= src/main.cpp
 
 OBJECTS:=$(patsubst $(SRCDIR)/%.cpp,$(BUILDIR)/%.o,$(SOURCES))
 EXECUTBALE=pcd
