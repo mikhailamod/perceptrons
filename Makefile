@@ -8,7 +8,7 @@ BINDIR=bin
 SOURCES:= src/main.cpp
 
 OBJECTS:=$(patsubst $(SRCDIR)/%.cpp,$(BUILDIR)/%.o,$(SOURCES))
-EXECUTBALE=pcd
+EXECUTBALE=perceptrons
 
 all: $(EXECUTBALE)
 
@@ -16,7 +16,7 @@ $(EXECUTBALE): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $(BINDIR)/$@ $(OBJECTS)
 
 $(BUILDIR)/%.o: $(SRCDIR)/%.cpp
-	$(CC) $(CFLAGS) -Iinclude/Eigen -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm bin/$(EXECUTBALE)
