@@ -1,7 +1,4 @@
-Q1: The minimum number of perceptrons is 3. To see how they should be connected, please see ann.png in the root folder
-Q2: It took four examples
-    (input1, input 2)->output
-    (0,0)->0
-    (1,0)->1
-    (0,1)->1
-    (1,1)->0
+Q1: The minimum number of perceptrons is 3. To see how they should be connected, please see ann.png in the root folder.
+It's a combination of OR, AND and NAND because p XOR q = (p \/ q) /\ (p nand q)
+Q2: It took 33 examples, 11 each for and, or and nand
+These can be found in and.txt, nand.txt and or.txt
