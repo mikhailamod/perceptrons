@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 {
     cout << "Perceptron" << endl;
     float theta = 1.0f;
-    vector<float> inputs = {0, 1};
+    vector<float> inputs = {0.9, 0.9};
     
     //weights are 11, 12, 21, 22
     vector<float> weights = {0.6, 1.1, 0.6, 1.1};
@@ -19,28 +19,27 @@ int main(int argc, char const *argv[])
 
     cout << "Inputs: " << inputs[0] << ", " << inputs[1] << endl;
     
-    float hidden1 = (inputs[0]*weights[0]) + (inputs[1]*weights[2]);
-    float hidden2 = (inputs[0]*weights[1]) + (inputs[1] * weights[3]);
-    cout << "hidden1 = " << hidden1 << endl;
-    cout << "hidden2 = " << hidden2 << endl;
+    float hidden_activation_1 = (inputs[0]*weights[0]) + (inputs[1]*weights[2]);
+    float hidden_activation_2 = (inputs[0]*weights[1]) + (inputs[1] * weights[3]);
+    cout << "hidden_activation_1 = " << hidden_activation_1 << endl;
+    cout << "hidden_activation_2 = " << hidden_activation_2 << endl;
 
-    float y1;
-    if(hidden1 >= theta){ y1 = 1; }
-    else { y1 = 0; }
+    float hidden_output_1;
+    if(hidden_activation_1 >= theta){ hidden_output_1 = 1; }
+    else { hidden_output_1 = 0; }
 
-    cout << "y1: " << y1 << endl;
+    cout << "hidden_output_1: " << hidden_output_1 << endl;
 
-    float y2;
-    if(hidden2 >= theta){ y2 = 1; }
-    else { y2 = 0; }
-    cout << "y2: " << y2 << endl;
+    float hidden_output_2;
+    if(hidden_activation_2 >= theta){ hidden_output_2 = 1; }
+    else { hidden_output_2 = 0; }
+    cout << "hidden_output_2: " << hidden_output_2 << endl;
 
-    float yin = (second_weight[0]*y1) + (second_weight[1] * y2);
-    cout << "yin temp = " << yin << endl;
-    if(yin >= theta){ yin = 1; }
-    else { yin = 0; }
+    float output = (second_weight[0]*hidden_output_1) + (second_weight[1] * hidden_output_2);
+    if(output >= theta){ output = 1; }
+    else { output = 0; }
 
-    cout << "Output = " << yin << endl;
+    cout << "Output = " << output << endl;
     return 0;
 }
 

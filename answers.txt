@@ -1,0 +1,7 @@
+Q1: The minimum number of perceptrons is 3. To see how they should be connected, please see ann.png in the root folder
+Q2: It took four examples
+    (input1, input 2)->output
+    (0,0)->0
+    (1,0)->1
+    (0,1)->1
+    (1,1)->0
